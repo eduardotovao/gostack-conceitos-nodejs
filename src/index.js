@@ -16,8 +16,6 @@ function logRequests(request, response, next) {
     console.log(logLabel);
 
     return next();
-
-    
 }
 
 app.use(logRequests);
@@ -61,6 +59,10 @@ app.put('/projects/:id', (request, response) => {
         owner
     };
 
+
+
+
+    
     projects[projectIndex] = project;
 
     return response.json(project);
@@ -77,6 +79,8 @@ app.delete('/projects/:id', (request, response) => {
     }
 
     projects.splice(projectIndex, 1);
+
+
 
     return response.status(204).send();
 });
